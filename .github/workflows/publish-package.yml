@@ -1,0 +1,24 @@
+name: Build and publish the package
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  compile and publish package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: install deps and build
+        run: |
+          yarn
+          yarn build
+      - name: publish pifed package
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: https://npm.pkg.github.com
