@@ -5,4 +5,6 @@ const Container = styled.div`
   text-align: center;
 `
 
-export const Hello: FunctionComponent = () => <Container>Hello, world</Container>
+export const Hello: FunctionComponent = () => {
+  return <Container>Hello, world</Container>
+}
