@@ -1,13 +1,16 @@
 {
-  "name": "piffed",
+  "name": "@bpar476/piffed",
   "version": "1.0.0",
   "description": "A design system for building portfolio websites",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/bpar476/piffed",
+  "repository": "https://github.com/bpar476/piffed.git",
   "author": "Ben Partridge",
   "license": "None",
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint src --ext .tsx --fix && prettier"
