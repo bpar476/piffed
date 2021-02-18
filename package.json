@@ -7,7 +7,6 @@
   "repository": "https://github.com/bpar476/piffed.git",
   "author": "Ben Partridge",
   "license": "None",
-  "private": true,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
