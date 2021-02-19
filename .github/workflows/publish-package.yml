@@ -17,7 +17,7 @@ jobs:
         run: |
           yarn
           yarn build
-      - name: publish pifed package
+      - name: publish piffed package to Github packages
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
