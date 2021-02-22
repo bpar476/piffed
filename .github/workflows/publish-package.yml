@@ -27,6 +27,7 @@ jobs:
         run: |
           yarn
           yarn build
+      # TODO: Only publish on a release
       - name: publish piffed package to Github packages
         uses: JS-DevTools/npm-publish@v1
         with:
