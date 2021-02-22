@@ -1,5 +1,6 @@
 import { usePageViewEvent } from './components/analytics/hooks'
-export { usePageViewEvent }
+import { AnalyticsScript } from './components/analytics/AnalyticsScript'
+export { AnalyticsScript, usePageViewEvent }
 
 import { Card, BaseCardProps, CardProps } from './components/cards/Card'
 import { LargeCard } from './components/cards/LargeCard'
