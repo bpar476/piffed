@@ -51,6 +51,7 @@ const CardContainer = styled.div`
   max-width: 100%;
 
   background-color: ${(props): string => `${props.theme.secondary}`};
+  color: ${(props): string => `${props.theme.text}`};
 
   border: ${(props): string => `2px solid ${props.theme.border}`};
 
