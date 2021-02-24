@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 
-import { Card } from '../../dist'
+import { Card } from '../../dist/piffed'
 
 export const Normal: React.VFC = () => (
   <Card

@@ -2,6 +2,7 @@ import React, { ReactElement, ReactNode } from 'react'
 import styled from 'styled-components'
 import { CardClickAnalyticsEventChannel } from '../analytics/analytics'
 import { cardClick } from '../analytics/events'
+import externalLinkIcon from '../../assets/link-external.svg'
 
 export type BaseCardProps = {
   content: string | ReactNode
@@ -35,7 +36,7 @@ export const Card = ({ externalLinkUrl, thumbnailUrl, thumbnailAlt, title, conte
         <CardSummary>
           <CardTitle>
             {title}
-            <ExternalLinkIcon src="/icons/link-external.svg" />
+            <ExternalLinkIcon src={externalLinkIcon} />
           </CardTitle>
           <CardContent>{content}</CardContent>
         </CardSummary>
