@@ -10,7 +10,10 @@ The library is distributed as an npm package on Github Packages from this reposi
 
 1. Contribute all code to develop
 1. Merge develop into main via pull request
+1. Increase version in `package.json`, when this reaches main a new version will be published to github packages
 1. Update package version description
+1. Tag the commit
+1. Create a release on GitHub
 
 ### Roadmap
 
