@@ -6,6 +6,7 @@ const SocialsContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.2em;
+  color: ${(props): string => `${props.theme.text}`};
 
   @media screen and (max-width: 800px) {
     flex-direction: row;
