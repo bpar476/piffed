@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint src --ext .tsx --fix && prettier",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src/stories/assets -p 6006",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {

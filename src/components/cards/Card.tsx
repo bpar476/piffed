@@ -2,6 +2,7 @@ import React, { ReactElement, ReactNode } from 'react'
 import styled from 'styled-components'
 import { CardClickAnalyticsEventChannel } from '../analytics/analytics'
 import { cardClick } from '../analytics/events'
+import { ExternalLinkIcon } from './ExternalLinkIcon'
 
 export type BaseCardProps = {
   content: string | ReactNode
@@ -13,12 +14,6 @@ export type BaseCardProps = {
 export type CardProps = {
   externalLinkUrl: string
 } & BaseCardProps
-
-const ExternalLinkIcon = styled.img`
-  height: 12px;
-  width: auto;
-  margin-left: 5px;
-`
 
 const analyticsFacade = new CardClickAnalyticsEventChannel()
 
@@ -35,7 +30,7 @@ export const Card = ({ externalLinkUrl, thumbnailUrl, thumbnailAlt, title, conte
         <CardSummary>
           <CardTitle>
             {title}
-            <ExternalLinkIcon src="/icons/link-external.svg" />
+            <ExternalLinkIcon />
           </CardTitle>
           <CardContent>{content}</CardContent>
         </CardSummary>

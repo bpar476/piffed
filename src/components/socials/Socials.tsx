@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { TwitterSocial, GitHubSocial, ItchSocial } from './Social'
+import { TwitterSocial, GitHubSocial, ItchSocial, SocialProvidedProps } from './Social'
 
 const SocialsContainer = styled.div`
   display: flex;
@@ -20,19 +20,19 @@ const SocialsHeader = styled.h3`
 `
 
 export type SocialsProps = {
-  githubHandle?: string
-  itchIoHandle?: string
-  twitterHandle?: string
+  githubProps?: SocialProvidedProps
+  itchIoProps?: SocialProvidedProps
+  twitterProps?: SocialProvidedProps
 }
 
-export const Socials: FunctionComponent<SocialsProps> = ({ githubHandle, itchIoHandle, twitterHandle }) => {
-  if (githubHandle || itchIoHandle || twitterHandle) {
+export const Socials: FunctionComponent<SocialsProps> = ({ githubProps, itchIoProps, twitterProps }) => {
+  if (githubProps || itchIoProps || twitterProps) {
     return (
       <SocialsContainer>
         <SocialsHeader>Socials</SocialsHeader>
-        {twitterHandle && <TwitterSocial handle={twitterHandle} />}
-        {githubHandle && <GitHubSocial handle={githubHandle} />}
-        {itchIoHandle && <ItchSocial handle={itchIoHandle} />}
+        {twitterProps && <TwitterSocial handle={twitterProps.handle} iconUrl={twitterProps.iconUrl} />}
+        {githubProps && <GitHubSocial handle={githubProps.handle} iconUrl={githubProps.iconUrl} />}
+        {itchIoProps && <ItchSocial handle={itchIoProps.handle} iconUrl={itchIoProps.iconUrl} />}
       </SocialsContainer>
     )
   }

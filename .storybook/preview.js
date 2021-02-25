@@ -2,12 +2,11 @@ import { ThemeProvider } from 'styled-components'
 
 // If you update the theme, make sure you update the background and the "introduction" story
 export const theme = {
-  name: 'Example theme',
-  primary: '#fcba03',
-  secondary: '#ba03fc',
-  border: '#c790d6',
-  link: '#c790d6',
-  text: '#edede8',
+  primary: '#98C1D9',
+  secondary: '#3D5A80',
+  border: '#EE6C4D',
+  link: '#EE6C4D',
+  text: '#E0FBFC',
 }
 
 export const parameters = {
