@@ -25,6 +25,10 @@ const resolutionToFontSizes = [
     query: 4000,
     fontSize: 36,
   },
+  {
+    query: 8000,
+    fontSize: 42,
+  },
 ]
 
 export const ScaledFontSize: FunctionComponent = (props) => {
