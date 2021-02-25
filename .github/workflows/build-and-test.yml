@@ -2,7 +2,7 @@ name: Build and test the package
 
 on:
   push:
-    branches: ['develop']
+    branches: ['main']
 
 jobs:
   compile_and_publish_package:

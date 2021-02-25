@@ -2,7 +2,7 @@ name: Build and publish the package
 
 on:
   push:
-    branches: ['main']
+    branches: ['release/*']
 
 jobs:
   compile_and_publish_package:
@@ -27,10 +27,28 @@ jobs:
         run: |
           yarn
           yarn build
-      # TODO: Only publish on a release
       - name: publish piffed package to Github packages
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           registry: https://npm.pkg.github.com
           access: restricted
+      - name: tag the commit with the released version
+        id: tag_release
+        uses: Klemensas/action-autotag@stable
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          tag_prefix: 'v'
+      - name: Create draft release to be published manually
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag_release.outputs.tagname}}
+          release_name: Release ${{ steps.tag_release.outputs.tagname}}
+          body: |
+            # Changes in this Release
+            - First Change
+            - Second Change
+          draft: true
+          prerelease: false
