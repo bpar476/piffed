@@ -4,19 +4,25 @@ Piffed is a portfolio website design kit for Next.js based sites. It includes co
 
 ## Developing
 
-The library is distributed as an npm package on Github Packages from this repository. Releases are made from the `main` branch. Contributions come from the `develop` branch.
+The library is distributed as an npm package on Github Packages from this repository. Releases are made from the `release/*` branch. Contributions come from the `main` branch.
 
 ### Release process
 
-1. Contribute all code to develop
-1. Merge develop into main via pull request
-1. Increase version in `package.json`, when this reaches main a new version will be published to github packages
-1. Update package version description
-1. Tag the commit
-1. Create a release on GitHub
+All code should be integrated on the `main` branch. When ready to release a new version:
+
+1. Checkout a new branch called `release/${version}` where version is the version you want to release
+1. Increase version in `package.json` to the value of `${version}`
+1. Push the branch to `origin`
+
+This will trigger the `publish-package` workflow which:
+
+1. Builds the module
+1. Publishes to github packages
+1. Creates a tag from package.json `version`
+1. Creates a draft release where you can fill in the changelog
+
+For more details see `.github/workflows/publish-package.yml`
 
 ### Roadmap
 
-1. Automate creating a tag based on package.json version when a new release is made from main
-1. Use webpack to include images in the distribution
 1. Set up Storybook and/or tests
