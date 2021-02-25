@@ -36,21 +36,33 @@ const HeaderContainer = styled.div`
   }
 `
 
-const Header: FunctionComponent = () => (
-  <HeaderContainer>
-    <Link href="/">
-      <Button>Home</Button>
+export type HeaderNavigationButtonProps = {
+  /**
+   * The text to display on the button
+   */
+  title: string
+  /**
+   * The URL the button will link to when clicked
+   */
+  href: string
+}
+
+export type HeaderProps = {
+  elements: HeaderNavigationButtonProps[]
+}
+
+const HeaderNavigationButton: FunctionComponent<HeaderNavigationButtonProps> = ({ title, href }) => (
+  <>
+    <Link href={href}>
+      <Button>{title}</Button>
     </Link>
-    <Link href="/about">
-      <Button>About</Button>
-    </Link>
-    <Link href="/blog">
-      <Button>Blog</Button>
-    </Link>
-    <Link href="/projects">
-      <Button>Projects</Button>
-    </Link>
-  </HeaderContainer>
+  </>
 )
 
-export default Header
+export const Header: FunctionComponent<HeaderProps> = ({ elements }) => (
+  <HeaderContainer>
+    {elements.map((element) => (
+      <HeaderNavigationButton key={element.title} {...element} />
+    ))}
+  </HeaderContainer>
+)

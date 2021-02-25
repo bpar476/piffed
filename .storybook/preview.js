@@ -24,7 +24,7 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <div style={{ fontSize: '24px', fontFamily: 'sans-serif' }}>
+    <div style={{ fontSize: '24px', fontFamily: 'sans-serif', height: '100%' }}>
       <Story />
     </div>
   ),
