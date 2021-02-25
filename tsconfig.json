@@ -32,6 +32,6 @@
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["src", "src/assets/img.d.ts"],
+  "include": ["src"],
   "exclude": ["dist", "node_modules", "piffed-example", "src/stories"]
 }

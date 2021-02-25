@@ -2,9 +2,6 @@ import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
 
 import HyperLink from '../Link'
-import TwitterLogo from '../../assets/Twitter.png'
-import GithubLogo from '../../assets/GitHub.png'
-import ItchLogo from '../../assets/itch.svg'
 
 type SocialBaseProps = {
   title: string
@@ -29,7 +26,6 @@ const SocialContainer = styled.div`
   justify-content: flex-start;
 
   font-size: 1em;
-  color: ${(props): string => `${props.theme.text}`};
 `
 
 const SocialLinkContainer = styled.div`
@@ -44,15 +40,22 @@ const SocialLinkContainer = styled.div`
 `
 
 export const TwitterSocial: FunctionComponent<{ handle: string }> = ({ handle }) => {
-  return <Social title="Twitter" handle={handle} link={`https://twitter.com/${handle}`} iconUrl={TwitterLogo} />
+  return <Social title="Twitter" handle={handle} link={`https://twitter.com/${handle}`} iconUrl="/icons/Twitter.png" />
 }
 
 export const ItchSocial: FunctionComponent<{ handle: string }> = ({ handle }) => {
-  return <Social title="Itch.io" handle={handle} link={`https://${handle.toLowerCase()}.itch.io`} iconUrl={ItchLogo} />
+  return (
+    <Social
+      title="Itch.io"
+      handle={handle}
+      link={`https://${handle.toLowerCase()}.itch.io`}
+      iconUrl="/icons/itch.svg"
+    />
+  )
 }
 
 export const GitHubSocial: FunctionComponent<{ handle: string }> = ({ handle }) => {
-  return <Social title="GitHub" handle={handle} link={`https://github.com/${handle}`} iconUrl={GithubLogo} />
+  return <Social title="GitHub" handle={handle} link={`https://github.com/${handle}`} iconUrl="/icons/GitHub.png" />
 }
 
 const Social = ({ title, handle, iconUrl, link }: SocialProps): ReactElement => {
