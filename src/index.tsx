@@ -21,7 +21,7 @@ export { PiffedTheme }
 import { Paragraph, Title } from './components/Content'
 export { Paragraph, Title }
 
-import HyperLink, { HyperLinkProps } from './components/Link'
+import { HyperLink, HyperLinkProps } from './components/Link'
 export { HyperLink, HyperLinkProps }
 
 import { Loader } from './components/Loader'

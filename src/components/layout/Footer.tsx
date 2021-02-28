@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { Paragraph } from '../Content'
-import Hyperlink from '../Link'
+import { HyperLink } from '../Link'
 
 const FooterContainer = styled.div`
   flex: 0 0;
@@ -25,13 +25,13 @@ export const Footer: FunctionComponent = () => {
     <FooterContainer>
       <Paragraph>
         Icons made by{' '}
-        <Hyperlink href="https://www.flaticon.com/authors/freepik" title="Freepik">
+        <HyperLink href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
-        </Hyperlink>{' '}
+        </HyperLink>{' '}
         from{' '}
-        <Hyperlink href="https://www.flaticon.com/" title="Flaticon">
+        <HyperLink href="https://www.flaticon.com/" title="Flaticon">
           www.flaticon.com
-        </Hyperlink>
+        </HyperLink>
       </Paragraph>
     </FooterContainer>
   )

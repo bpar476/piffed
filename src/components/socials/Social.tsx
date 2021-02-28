@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
 
-import HyperLink from '../Link'
+import { HyperLink } from '../Link'
 
 type SocialBaseProps = {
   title: string

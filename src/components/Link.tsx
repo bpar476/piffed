@@ -14,7 +14,7 @@ export type HyperLinkProps = {
   title?: string
 }
 
-const HyperLink: FunctionComponent<HyperLinkProps> = ({ href, title, external, children }) => {
+export const HyperLink: FunctionComponent<HyperLinkProps> = ({ href, title, external, children }) => {
   return external ? (
     <Anchor href={href} target="__blank" rel="noreferrer noopener" title={title || href}>
       {children}
@@ -23,5 +23,3 @@ const HyperLink: FunctionComponent<HyperLinkProps> = ({ href, title, external, c
     <Anchor href={href}>{children}</Anchor>
   )
 }
-
-export default HyperLink
