@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 
-import { Layout, Header, Footer, HyperLink, HeaderNavigationButtonProps, PiffedTheme } from '../../dist'
+import { Layout, HyperLink, HeaderNavigationButtonProps, PiffedTheme } from '../../dist'
 
 const defaultElements: HeaderNavigationButtonProps[] = [
   {
