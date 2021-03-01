@@ -57,9 +57,12 @@ const LargeCardTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 5px;
+
+  color: ${(props): string => props.theme.text};
 `
 
 const LargeCardTitle = styled.h3`
   margin: 0 0 5px 0;
   font-style: italic;
+  color: ${(props): string => props.theme.text};
 `

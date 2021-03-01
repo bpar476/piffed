@@ -28,6 +28,7 @@ const SocialContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: ${(props): string => props.theme.text};
 
   font-size: 1em;
 `
