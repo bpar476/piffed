@@ -1,6 +1,6 @@
 import React from 'react'
 import { GitHubSocial, ItchSocial, LinkedInSocial, Socials, TwitterSocial } from '../../dist'
-import { LinkedInProps, SocialProvidedProps } from '../../dist/components/socials/Social'
+import { EmailSocial, LinkedInProps, SocialProvidedProps } from '../../dist/components/socials/Social'
 
 const githubProps: SocialProvidedProps = {
   handle: 'Developer789',
@@ -23,6 +23,11 @@ const linkedInProps: LinkedInProps = {
   iconUrl: '/LinkedIn.png',
 }
 
+const emailprops: SocialProvidedProps = {
+  handle: 'ben.partridge249@gmail.com',
+  iconUrl: '/send-email.png',
+}
+
 export const SocialsGroup: React.VFC = () => (
   <>
     <em>
@@ -42,6 +47,8 @@ export const ItchIo: React.VFC = () => <ItchSocial {...itchProps} />
 export const GitHub: React.VFC = () => <GitHubSocial {...githubProps} />
 
 export const LinkedIn: React.VFC = () => <LinkedInSocial {...linkedInProps} />
+
+export const Email: React.VFC = () => <EmailSocial {...emailprops} />
 
 export default {
   title: 'Piffed/Social',

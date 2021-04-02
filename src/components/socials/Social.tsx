@@ -60,6 +60,10 @@ export const LinkedInSocial: FunctionComponent<LinkedInProps> = ({ handle, iconU
   return <Social title="LinkedIn" handle={handle} link={profileUrl} iconUrl={iconUrl} />
 }
 
+export const EmailSocial: FunctionComponent<SocialProvidedProps> = ({ handle, iconUrl }) => {
+  return <Social title="Email" handle={handle} link={`mailto:${handle}`} iconUrl={iconUrl} />
+}
+
 const Social = ({ title, handle, iconUrl, link }: SocialProps): ReactElement => {
   return (
     <SocialContainer>
