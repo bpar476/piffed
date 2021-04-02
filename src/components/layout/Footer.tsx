@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-
 import { Paragraph } from '../Content'
 import { HyperLink } from '../Link'
 
@@ -14,15 +13,17 @@ const FooterContainer = styled.div`
   font-size: 12px;
 
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 
   margin-top: auto;
 `
 
-export const Footer: FunctionComponent = () => {
+export const Footer: FunctionComponent<{ footerContent?: React.ReactElement }> = ({ footerContent }) => {
   return (
     <FooterContainer>
+      {footerContent}
       <Paragraph>
         Icons made by{' '}
         <HyperLink href="https://www.flaticon.com/authors/freepik" title="Freepik">

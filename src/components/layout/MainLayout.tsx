@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import { PiffedTheme } from '../theme/Theme'
+import { Footer } from './Footer'
 import { Header, HeaderProps } from './Header'
 import { ScaledFontSize } from './ScaledFontSize'
-import { Footer } from './Footer'
-import { PiffedTheme } from '../theme/Theme'
 
-export type LayoutProps = { theme: PiffedTheme; font: string } & HeaderProps
+export type LayoutProps = { theme: PiffedTheme; font: string; footerContent?: React.ReactElement } & HeaderProps
 
 const Background = styled.div<{ font: string }>`
   height: calc(100% - 10px);
@@ -22,13 +22,13 @@ const Background = styled.div<{ font: string }>`
   color: ${(props): string => props.theme.text};
 `
 
-export const Layout: FunctionComponent<LayoutProps> = ({ children, theme, font, elements }) => {
+export const Layout: FunctionComponent<LayoutProps> = ({ children, theme, font, elements, footerContent }) => {
   return (
     <ThemeProvider theme={theme}>
       <Background font={font}>
         <Header elements={elements} />
         {children}
-        <Footer />
+        <Footer footerContent={footerContent} />
       </Background>
     </ThemeProvider>
   )

@@ -1,7 +1,6 @@
-import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
-
-import { Layout, HyperLink, HeaderNavigationButtonProps, PiffedTheme } from '../../dist'
+import React from 'react'
+import { HeaderNavigationButtonProps, HyperLink, Layout, Paragraph, PiffedTheme, Title } from '../../dist'
 
 const defaultElements: HeaderNavigationButtonProps[] = [
   {
@@ -59,6 +58,16 @@ export const DarkTheme: React.VFC = () => (
       . You should provide a theme to the layout. You can use the ScaledFontLayout to make your website scale the root
       font-size based on the display size. This will update all component sizes as they are defined in em units.
     </p>
+  </Layout>
+)
+
+const CustomFooterContent = (
+  <div style={{ backgroundColor: 'green' }}>You can add a custom content to your footer as well</div>
+)
+export const CustomFooter: React.VFC = () => (
+  <Layout theme={darkTheme} elements={defaultElements} font="sans-serif" footerContent={CustomFooterContent}>
+    <Title>Layouts are great for setting your content</Title>
+    <Paragraph>but...</Paragraph>
   </Layout>
 )
 
