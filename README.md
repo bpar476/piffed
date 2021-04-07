@@ -12,6 +12,7 @@ All code should be integrated on the `main` branch. When ready to release a new 
 
 1. Checkout a new branch called `release/${version}` where version is the version you want to release
 1. Increase version in `package.json` to the value of `${version}`
+1. Commit the new version
 1. Push the branch to `origin`
 
 This will trigger the `publish-package` workflow which:
