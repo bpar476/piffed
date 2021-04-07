@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
-
 import { HyperLink } from '../Link'
 
 type SocialBaseProps = {
@@ -13,6 +12,7 @@ export type SocialProvidedProps = {
   iconUrl: string
 }
 
+export type LinkedInProps = SocialProvidedProps & { profileUrl: string }
 export type SocialProps = SocialBaseProps & SocialProvidedProps
 
 const SocialIcon = styled.img`
@@ -56,6 +56,14 @@ export const GitHubSocial: FunctionComponent<SocialProvidedProps> = ({ handle, i
   return <Social title="GitHub" handle={handle} link={`https://github.com/${handle}`} iconUrl={iconUrl} />
 }
 
+export const LinkedInSocial: FunctionComponent<LinkedInProps> = ({ handle, iconUrl, profileUrl }) => {
+  return <Social title="LinkedIn" handle={handle} link={profileUrl} iconUrl={iconUrl} />
+}
+
+export const EmailSocial: FunctionComponent<SocialProvidedProps> = ({ handle, iconUrl }) => {
+  return <Social title="Email" handle={handle} link={`mailto:${handle}`} iconUrl={iconUrl} />
+}
+
 const Social = ({ title, handle, iconUrl, link }: SocialProps): ReactElement => {
   return (
     <SocialContainer>
@@ -71,3 +79,5 @@ const Social = ({ title, handle, iconUrl, link }: SocialProps): ReactElement => 
     </SocialContainer>
   )
 }
+
+export const CustomSocial = Social

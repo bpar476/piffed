@@ -1,8 +1,6 @@
 import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-
-import { TwitterSocial, ItchSocial, GitHubSocial, Socials } from '../../dist'
-import { SocialProvidedProps } from '../../dist/components/socials/Social'
+import { GitHubSocial, ItchSocial, LinkedInSocial, Socials, TwitterSocial } from '../../dist'
+import { EmailSocial, LinkedInProps, SocialProvidedProps } from '../../dist/components/socials/Social'
 
 const githubProps: SocialProvidedProps = {
   handle: 'Developer789',
@@ -17,6 +15,17 @@ const twitterProps: SocialProvidedProps = {
 const itchProps: SocialProvidedProps = {
   handle: 'GameMaker246',
   iconUrl: '/itch.svg',
+}
+
+const linkedInProps: LinkedInProps = {
+  handle: 'Ben Partridge',
+  profileUrl: 'https://www.linkedin.com/in/bpar476/',
+  iconUrl: '/LinkedIn.png',
+}
+
+const emailprops: SocialProvidedProps = {
+  handle: 'ben.partridge249@gmail.com',
+  iconUrl: '/send-email.png',
 }
 
 export const SocialsGroup: React.VFC = () => (
@@ -36,6 +45,10 @@ export const Twitter: React.VFC = () => <TwitterSocial {...twitterProps} />
 export const ItchIo: React.VFC = () => <ItchSocial {...itchProps} />
 
 export const GitHub: React.VFC = () => <GitHubSocial {...githubProps} />
+
+export const LinkedIn: React.VFC = () => <LinkedInSocial {...linkedInProps} />
+
+export const Email: React.VFC = () => <EmailSocial {...emailprops} />
 
 export default {
   title: 'Piffed/Social',
