@@ -60,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:7.22.0"],
             ["next", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:10.0.7"],
             ["prettier", "npm:2.2.1"],
+            ["pure-react-carousel", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:1.27.6"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -3680,6 +3681,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:7.22.0"],
             ["next", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:10.0.7"],
             ["prettier", "npm:2.2.1"],
+            ["pure-react-carousel", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:1.27.6"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:17.0.1"],
             ["react-is", "npm:17.0.1"],
@@ -4056,6 +4058,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.14.30"],
             ["@types/yargs", "npm:15.0.13"],
             ["chalk", "npm:4.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@jkroso/type", [
+        ["npm:1.1.1", {
+          "packageLocation": "./.yarn/cache/@jkroso-type-npm-1.1.1-4eda899d56-5920bf51ef.zip/node_modules/@jkroso/type/",
+          "packageDependencies": [
+            ["@jkroso/type", "npm:1.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -9688,6 +9699,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["deep-freeze", [
+        ["npm:0.0.1", {
+          "packageLocation": "./.yarn/cache/deep-freeze-npm-0.0.1-12d684fc1a-c43ab54de9.zip/node_modules/deep-freeze/",
+          "packageDependencies": [
+            ["deep-freeze", "npm:0.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["deep-is", [
         ["npm:0.1.3", {
           "packageLocation": "./.yarn/cache/deep-is-npm-0.1.3-0941784645-3de58f86af.zip/node_modules/deep-is/",
@@ -9707,6 +9727,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["deepmerge", [
+        ["npm:2.2.1", {
+          "packageLocation": "./.yarn/cache/deepmerge-npm-2.2.1-44c00cbffa-8394eb5ab1.zip/node_modules/deepmerge/",
+          "packageDependencies": [
+            ["deepmerge", "npm:2.2.1"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.2.2", {
           "packageLocation": "./.yarn/cache/deepmerge-npm-4.2.2-112165ced2-85abf8e004.zip/node_modules/deepmerge/",
           "packageDependencies": [
@@ -10320,6 +10347,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/env-paths-npm-2.2.0-ac4ed99068-09de4fd1c0.zip/node_modules/env-paths/",
           "packageDependencies": [
             ["env-paths", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["equals", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/equals-npm-1.1.0-680ab26517-fc2c1ab792.zip/node_modules/equals/",
+          "packageDependencies": [
+            ["equals", "npm:1.1.0"],
+            ["@jkroso/type", "npm:1.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -16086,6 +16123,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.1.1-26eb3e15cf-0202dc191c.zip/node_modules/punycode/",
           "packageDependencies": [
             ["punycode", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["pure-react-carousel", [
+        ["npm:1.27.6", {
+          "packageLocation": "./.yarn/cache/pure-react-carousel-npm-1.27.6-bcff758dcf-8ebf4f9cdc.zip/node_modules/pure-react-carousel/",
+          "packageDependencies": [
+            ["pure-react-carousel", "npm:1.27.6"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:1.27.6", {
+          "packageLocation": "./.yarn/$$virtual/pure-react-carousel-virtual-e66885ee1b/0/cache/pure-react-carousel-npm-1.27.6-bcff758dcf-8ebf4f9cdc.zip/node_modules/pure-react-carousel/",
+          "packageDependencies": [
+            ["pure-react-carousel", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:1.27.6"],
+            ["@babel/runtime", "npm:7.12.18"],
+            ["@types/react", "npm:17.0.2"],
+            ["@types/react-dom", "npm:17.0.1"],
+            ["deep-freeze", "npm:0.0.1"],
+            ["deepmerge", "npm:2.2.1"],
+            ["equals", "npm:1.1.0"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.1"],
+            ["react-dom", "virtual:ec6f1102ef5844eac406dcd901b688864f485f23e16a802e474ee3e58360c30564eb2ed88bd7cf44dbceeb96aa6fb91b0971263f61b900ace1afed51941eae7c#npm:17.0.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react",
+            "react-dom",
+            "react"
           ],
           "linkType": "HARD",
         }]
