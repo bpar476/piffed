@@ -1,7 +1,8 @@
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
-import React, { FunctionComponent, ReactElement, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import React, { FunctionComponent, ReactElement } from 'react'
+import styled, { keyframes } from 'styled-components'
+import { useScreenScale } from '../hooks/aspect-ratio'
 import { Title } from './Content'
 
 export interface CarouselProps {
@@ -12,6 +13,16 @@ export interface CarouselItem {
   body: ReactElement
   backgroundImage: string
 }
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
 
 const CarouselContainer = styled.div`
   position: relative;
@@ -30,17 +41,25 @@ const VerticallyCenteredButton = styled.div`
   padding: 15px;
 
   button {
-    border: ${(props): string => `2px solid ${props.theme.border}`};
     border-radius: 24px;
+    border: 0;
 
     // Adding AA to the colour sets the alpha channel
     background-color: ${(props): string => `${props.theme.secondary}AA`};
+    border: ${(props): string => `2px solid ${props.theme.secondary}AA`};
+    opacity: 0.5;
     font-size: 16px;
     font-weight: bold;
     color: ${(props): string => `${props.theme.text}`};
 
     height: 32px;
     width: 32px;
+
+    :hover {
+      border: ${(props): string => `2px solid ${props.theme.border}`};
+      animation: ${fadeIn} 0.2s ease-in;
+      animation-fill-mode: forwards;
+    }
   }
 `
 
@@ -75,18 +94,7 @@ function toCarouselSlide(item: CarouselItem, index: number): ReactElement {
 }
 
 export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
-  const [widthRatio, setWidthRatio] = useState<number>(1)
-  const [heightRatio, setHeightRatio] = useState<number>(1)
-
-  useEffect(() => {
-    setHeightRatio(((document.documentElement.clientHeight / screen.height) * screen.height) / 720 || 1)
-    setWidthRatio(((document.documentElement.clientWidth / screen.width) * screen.width) / 1280 || 1)
-
-    window.onresize = (): void => {
-      setHeightRatio(((document.documentElement.clientHeight / screen.height) * screen.height) / 720 || 1)
-      setWidthRatio(((document.documentElement.clientWidth / screen.width) * screen.width) / 1280 || 1)
-    }
-  }, [])
+  const { widthRatio, heightRatio } = useScreenScale(1280, 720)
 
   return (
     <div style={{ width: '100%' }}>
