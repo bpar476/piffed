@@ -1,6 +1,6 @@
 {
   "name": "@bpar476/piffed",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "A design system for building portfolio websites",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
