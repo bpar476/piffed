@@ -31,9 +31,6 @@ const CarouselRoot = styled.div`
 
 const CarouselContainer = styled.div`
   position: relative;
-
-  border: ${(props): string => `2px solid ${props.theme.border}`};
-  border-radius: 10px;
   // This truncates any background content that overflows the border-radius
   overflow: hidden;
 `
