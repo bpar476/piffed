@@ -1,9 +1,9 @@
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel'
-import 'pure-react-carousel/dist/react-carousel.es.css'
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { useScreenScale } from '../hooks/aspect-ratio'
-import { Title } from './Content'
+import { useScreenScale } from '../../hooks/aspect-ratio'
+import { Title } from '../Content'
+import { CarouselStyles } from './Styles'
 
 export interface CarouselProps {
   items: CarouselItem[]
@@ -22,6 +22,11 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
   }
+`
+
+const CarouselRoot = styled.div`
+  width: 100%;
+  ${CarouselStyles};
 `
 
 const CarouselContainer = styled.div`
@@ -97,7 +102,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
   const { widthRatio, heightRatio } = useScreenScale(1280, 720)
 
   return (
-    <div style={{ width: '100%' }}>
+    <CarouselRoot>
       <CarouselProvider
         infinite
         totalSlides={items.length}
@@ -114,6 +119,6 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
           </NextButtonContainer>
         </CarouselContainer>
       </CarouselProvider>
-    </div>
+    </CarouselRoot>
   )
 }

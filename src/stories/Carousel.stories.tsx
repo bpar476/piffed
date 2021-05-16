@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { Carousel, CarouselItem } from '../../dist/components/Carousel'
+import { Carousel, CarouselItem } from '../../dist/components/carousel/Carousel'
 import { Paragraph } from '../../dist/components/Content'
 
 const testCarouselItems: CarouselItem[] = [
