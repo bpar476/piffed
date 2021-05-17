@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { Paragraph } from '../Content'
-import { HyperLink } from '../Link'
 
 const FooterContainer = styled.div`
   flex: 0 0;
@@ -21,19 +19,5 @@ const FooterContainer = styled.div`
 `
 
 export const Footer: FunctionComponent<{ footerContent?: React.ReactElement }> = ({ footerContent }) => {
-  return (
-    <FooterContainer>
-      {footerContent}
-      <Paragraph>
-        Icons made by{' '}
-        <HyperLink href="https://www.flaticon.com/authors/freepik" title="Freepik">
-          Freepik
-        </HyperLink>{' '}
-        from{' '}
-        <HyperLink href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </HyperLink>
-      </Paragraph>
-    </FooterContainer>
-  )
+  return <FooterContainer>{footerContent}</FooterContainer>
 }

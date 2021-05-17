@@ -28,10 +28,10 @@ export const Card = ({ externalLinkUrl, thumbnailUrl, thumbnailAlt, title, conte
       >
         <CardThumbnail src={thumbnailUrl} alt={thumbnailAlt} />
         <CardSummary>
-          <CardTitle>
-            {title}
+          <CardHeader>
+            <CardTitle>{title}</CardTitle>
             <ExternalLinkIcon />
-          </CardTitle>
+          </CardHeader>
           <CardContent>{content}</CardContent>
         </CardSummary>
       </CardLink>
@@ -78,6 +78,12 @@ const CardSummary = styled.div`
   flex: 1 1;
 
   padding: 2px 8px 0 8px;
+`
+
+const CardHeader = styled.div`
+  height: 0.8em;
+  display: flex;
+  justify-content: space-between;
 `
 
 const CardTitle = styled.h6`
