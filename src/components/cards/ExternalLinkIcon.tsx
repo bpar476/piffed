@@ -8,8 +8,8 @@ const IconSVG = styled.svg`
   stroke-linecap: round;
 `
 
-export const ExternalLinkIcon: FunctionComponent = () => (
-  <IconSVG viewBox="0 0 64 64">
+export const ExternalLinkIcon: FunctionComponent<{ className?: string }> = (props) => (
+  <IconSVG className={props.className} viewBox="0 0 64 64">
     {/* Box */}
     <line x1="5" y1="10" x2="35" y2="10"></line>
     <line x1="53" y1="28" x2="53" y2="58"></line>
