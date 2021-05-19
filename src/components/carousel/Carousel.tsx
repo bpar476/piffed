@@ -36,9 +36,12 @@ const CarouselContainer = styled.div`
 `
 
 const VerticallyCenteredButton = styled.div`
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
   overflow: hidden;
   padding: 15px;
 
@@ -75,9 +78,14 @@ const NextButtonContainer = styled(VerticallyCenteredButton)`
 
 const CarouselItemContainer = styled.div<{ imageUrl: string }>`
   background-image: url(${(props) => props.imageUrl});
+  background-size: cover;
   width: auto;
   height: 100%;
-  padding: 15px;
+  padding: 70px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 15px;
+  }
 `
 
 const SlideTitle = styled(Title)`
@@ -105,6 +113,8 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
         totalSlides={items.length}
         naturalSlideWidth={widthRatio * 4}
         naturalSlideHeight={heightRatio * 1}
+        isPlaying={window.matchMedia(`(max-width: 600px)`).matches}
+        interval={2000}
       >
         <CarouselContainer>
           <Slider>{items.map(toCarouselSlide)}</Slider>
