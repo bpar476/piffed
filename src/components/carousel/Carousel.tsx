@@ -82,7 +82,7 @@ const CarouselItemContainer = styled.div<{ imageUrl: string }>`
   background-size: cover;
   width: auto;
   height: 100%;
-  padding: 70px;
+  padding: 15px 70px 15px 70px;
 
   @media only screen and (max-width: ${breakpoints.largeMobile}) {
     padding: 15px;
