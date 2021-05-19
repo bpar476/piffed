@@ -1,6 +1,7 @@
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel'
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { breakpoints } from '../../breakpoints'
 import { useScreenScale } from '../../hooks/aspect-ratio'
 import { Title } from '../Content'
 import { CarouselStyles } from './Styles'
@@ -36,7 +37,7 @@ const CarouselContainer = styled.div`
 `
 
 const VerticallyCenteredButton = styled.div`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${breakpoints.largeMobile}) {
     display: none;
   }
 
@@ -83,7 +84,7 @@ const CarouselItemContainer = styled.div<{ imageUrl: string }>`
   height: 100%;
   padding: 70px;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${breakpoints.largeMobile}) {
     padding: 15px;
   }
 `
@@ -113,7 +114,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
         totalSlides={items.length}
         naturalSlideWidth={widthRatio * 4}
         naturalSlideHeight={heightRatio * 1}
-        isPlaying={window.matchMedia(`(max-width: 600px)`).matches}
+        isPlaying={window.matchMedia(`(max-width: ${breakpoints.largeMobile})`).matches}
         interval={2000}
       >
         <CarouselContainer>

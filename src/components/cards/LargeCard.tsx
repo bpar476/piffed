@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-
+import { breakpoints } from '../../breakpoints'
 import { BaseCardProps } from './Card'
 
 // Lage card is different from card in the way it renders. They don't render well side by side and on mobile the image
@@ -21,7 +21,7 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     flex-direction: column;
     align-items: center;
   }
@@ -32,7 +32,7 @@ const LargeCardContainer = styled.div`
   flex-direction: column;
   max-width: 80%;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     max-width: 100%;
     align-items: center;
   }

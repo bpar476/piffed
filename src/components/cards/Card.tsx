@@ -1,5 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react'
 import styled from 'styled-components'
+import { breakpoints } from '../../breakpoints'
 import { CardClickAnalyticsEventChannel } from '../analytics/analytics'
 import { cardClick } from '../analytics/events'
 import { ExternalLinkIcon } from './ExternalLinkIcon'
@@ -58,7 +59,7 @@ const CardContainer = styled.div`
     margin-right: 0;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     margin-right: 0;
   }
 `

@@ -1,32 +1,33 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
+import { breakpoints } from '../../breakpoints'
 
 const resolutionToFontSizes = [
   {
-    query: 400,
+    query: breakpoints.smallMobile,
     fontSize: 20,
   },
   {
-    query: 900,
+    query: breakpoints.largeMobile,
     fontSize: 20,
   },
   {
-    query: 1300,
+    query: breakpoints.SD,
     fontSize: 16,
   },
   {
-    query: 2000,
+    query: breakpoints.HD,
     fontSize: 24,
   },
   {
-    query: 2800,
+    query: breakpoints.QHD,
     fontSize: 28,
   },
   {
-    query: 4000,
+    query: breakpoints.UHD,
     fontSize: 36,
   },
   {
-    query: 8000,
+    query: breakpoints.EightK,
     fontSize: 42,
   },
 ]
@@ -36,9 +37,7 @@ export const ScaledFontSize: FunctionComponent = (props) => {
   const [queryingFontSize, setQueryingFontSize] = useState<boolean>(true)
 
   const updateFontSize = (): void => {
-    const match = resolutionToFontSizes
-      .sort((a, b) => a.query - b.query)
-      .find((entry) => window.matchMedia(`(max-width: ${entry.query}px)`).matches)
+    const match = resolutionToFontSizes.find((entry) => window.matchMedia(`(max-width: ${entry.query})`).matches)
 
     setFontSize(match?.fontSize || fontSize)
     setQueryingFontSize(false)

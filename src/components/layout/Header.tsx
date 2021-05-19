@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import { breakpoints } from '../../breakpoints'
 
 const Button = styled.a`
   font-family: monospace;
@@ -31,7 +32,7 @@ const HeaderContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     justify-content: center;
   }
 `

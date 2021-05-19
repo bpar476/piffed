@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react'
 import styled from 'styled-components'
+import { breakpoints } from '../../breakpoints'
 import { HyperLink } from '../Link'
 
 type SocialBaseProps = {
@@ -39,7 +40,7 @@ const SocialLinkContainer = styled.div`
 
   font-size: 0.9em;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     display: none;
   }
 `

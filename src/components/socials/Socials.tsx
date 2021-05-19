@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
+import { breakpoints } from '../../breakpoints'
 import {
   EmailSocial,
   GitHubSocial,
@@ -16,13 +17,13 @@ const SocialsContainer = styled.div`
   font-size: 1.2em;
   color: ${(props): string => `${props.theme.text}`};
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     flex-direction: row;
   }
 `
 
 const SocialsHeader = styled.h3`
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
     display: none;
   }
 `
