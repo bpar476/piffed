@@ -5,14 +5,18 @@ import { Paragraph } from '../../dist/components/Content'
 
 const testCarouselItems: CarouselItem[] = [
   {
-    title: 'Item 1',
+    title: 'Big Brother Australia',
     body: (
       <>
-        <Paragraph>I am the first element</Paragraph>
-        <Paragraph>And I have lots of content</Paragraph>
+        <Paragraph style={{ color: 'black', fontWeight: 'lighter' }}>
+          Big Brother Australia is one of Australias top rated reality TV shows. At Endemol Shine we revitalised the
+          format to critical acclaim. My role on the show was as an assistant editor where I also did assembly for 10
+          episodes
+        </Paragraph>
       </>
     ),
-    backgroundImage: 'https://momentousinstitute.org/assets/site/blog/clouds.jpg',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=webaliser-_TPTXZd9mOo-unsplash.jpg&w=1920',
   },
   {
     title: 'Item 2',
