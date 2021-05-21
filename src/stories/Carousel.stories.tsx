@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react/types-6-0'
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Carousel, CarouselItem } from '../../dist/components/carousel/Carousel'
 import { Paragraph } from '../../dist/components/Content'
 
@@ -22,8 +22,8 @@ const testCarouselItems: CarouselItem[] = [
     title: 'Item 2',
     body: (
       <>
-        <Paragraph>I am the second element</Paragraph>
-        <Paragraph>I also have content</Paragraph>
+        <Paragraph style={{ color: 'black', fontWeight: 'lighter' }}>I am the second element</Paragraph>
+        <Paragraph style={{ color: 'black', fontWeight: 'lighter' }}>I also have content</Paragraph>
       </>
     ),
     backgroundImage: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Rainbow-diagram-ROYGBIV.svg',
@@ -32,8 +32,8 @@ const testCarouselItems: CarouselItem[] = [
     title: 'Item 3',
     body: (
       <>
-        <Paragraph>I am the third element</Paragraph>
-        <Paragraph>
+        <Paragraph style={{ color: 'black', fontWeight: 'lighter' }}>I am the third element</Paragraph>
+        <Paragraph style={{ color: 'black', fontWeight: 'lighter' }}>
           I am empty
           <br />
           ... or am I
@@ -46,6 +46,15 @@ const testCarouselItems: CarouselItem[] = [
 ]
 
 export const CarouselStory: React.VFC = () => <Carousel items={testCarouselItems} />
+
+const testCarouselElements: ReactElement[] = [
+  <div key="1">You can also add completely custom react content to the carousel</div>,
+  <div key="2">
+    <h1>Feel free to customise however you like</h1>
+  </div>,
+]
+
+export const CarouselCustomElementsStory: React.VFC = () => <Carousel items={testCarouselElements} />
 
 export default {
   title: 'Piffed/Carousel',

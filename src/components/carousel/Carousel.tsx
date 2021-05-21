@@ -6,13 +6,29 @@ import { useScreenScale } from '../../hooks/aspect-ratio'
 import { Title } from '../Content'
 import { CarouselStyles } from './Styles'
 
+/**
+ * A Carousel can render CarouselItems or arbitrary
+ * react elements as its content
+ */
 export interface CarouselProps {
-  items: CarouselItem[]
+  items: Array<CarouselItem | ReactElement>
 }
+/**
+ * Carousel item is a type that when populated can be
+ * used to create a basic carousel slide. If you want a
+ * simple carousel, this type should work.
+ */
 export interface CarouselItem {
   title: string
   body: ReactElement
   backgroundImage: string
+}
+
+function isCarouselItem(obj: CarouselItem | ReactElement): obj is CarouselItem {
+  const carouselItem = obj as CarouselItem
+  return (
+    carouselItem.title !== undefined && carouselItem.body !== undefined && carouselItem.backgroundImage !== undefined
+  )
 }
 
 const fadeIn = keyframes`
@@ -77,31 +93,38 @@ const NextButtonContainer = styled(VerticallyCenteredButton)`
   right: 0;
 `
 
-const CarouselItemContainer = styled.div<{ imageUrl: string }>`
-  background-image: url(${(props) => props.imageUrl});
-  background-size: cover;
+const CarouselItemContainerBase = styled.div`
   width: auto;
   height: 100%;
   padding: 15px 70px 15px 70px;
-  background-color: rgba(220, 230, 240, 0.8);
-  background-blend-mode: lighten;
 
   @media only screen and (max-width: ${breakpoints.largeMobile}) {
     padding: 15px;
   }
 `
 
+const CarouselItemContainer = styled(CarouselItemContainerBase)<{ imageUrl: string }>`
+  background-image: url(${(props) => props.imageUrl || undefined});
+  background-size: ${(props) => (props.imageUrl && 'cover') || undefined};
+  background-color: rgba(220, 230, 240, 0.8);
+  background-blend-mode: lighten;
+`
+
 const SlideTitle = styled(Title)`
   margin: 0;
 `
 
-function toCarouselSlide(item: CarouselItem, index: number): ReactElement {
+function toCarouselSlide(item: CarouselItem | ReactElement, index: number): ReactElement {
   return (
     <Slide index={index} key={index}>
-      <CarouselItemContainer imageUrl={item.backgroundImage}>
-        <SlideTitle>{item.title}</SlideTitle>
-        {item.body}
-      </CarouselItemContainer>
+      {isCarouselItem(item) ? (
+        <CarouselItemContainer imageUrl={item.backgroundImage}>
+          <SlideTitle>{item.title}</SlideTitle>
+          {item.body}
+        </CarouselItemContainer>
+      ) : (
+        <CarouselItemContainerBase>{item}</CarouselItemContainerBase>
+      )}
     </Slide>
   )
 }
