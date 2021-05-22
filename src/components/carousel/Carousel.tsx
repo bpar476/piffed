@@ -124,7 +124,7 @@ function toCarouselSlide(item: CarouselItem | ReactElement, index: number): Reac
       {isCarouselItem(item) ? (
         <CarouselItemContainer imageUrl={item.backgroundImage}>
           <SlideTitle>{item.title}</SlideTitle>
-          {window.matchMedia(`(min-width: ${breakpoints.largeMobile}`).matches && item.body}
+          {item.body}
         </CarouselItemContainer>
       ) : (
         <CarouselItemContainerBase>{item}</CarouselItemContainerBase>
