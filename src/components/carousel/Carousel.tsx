@@ -112,6 +112,10 @@ const CarouselItemContainer = styled(CarouselItemContainerBase)<{ imageUrl: stri
 
 const SlideTitle = styled(Title)`
   margin: 0;
+
+  @media screen and (max-width: ${breakpoints.largeMobile}) {
+    font-size: 2rem;
+  }
 `
 
 function toCarouselSlide(item: CarouselItem | ReactElement, index: number): ReactElement {
@@ -120,7 +124,7 @@ function toCarouselSlide(item: CarouselItem | ReactElement, index: number): Reac
       {isCarouselItem(item) ? (
         <CarouselItemContainer imageUrl={item.backgroundImage}>
           <SlideTitle>{item.title}</SlideTitle>
-          {item.body}
+          {window.matchMedia(`(min-width: ${breakpoints.largeMobile}`).matches && item.body}
         </CarouselItemContainer>
       ) : (
         <CarouselItemContainerBase>{item}</CarouselItemContainerBase>
