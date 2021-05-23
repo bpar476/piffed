@@ -114,7 +114,7 @@ const SlideTitle = styled(Title)`
   margin: 0;
 
   @media screen and (max-width: ${breakpoints.largeMobile}) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `
 
