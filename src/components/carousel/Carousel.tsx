@@ -96,10 +96,10 @@ const NextButtonContainer = styled(VerticallyCenteredButton)`
 const CarouselItemContainerBase = styled.div`
   width: auto;
   height: 100%;
-  padding: 15px 70px 15px 70px;
+  padding: 5px 60px 5px 60px;
 
   @media only screen and (max-width: ${breakpoints.largeMobile}) {
-    padding: 15px;
+    padding: 5px;
   }
 `
 
