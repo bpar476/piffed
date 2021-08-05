@@ -45,7 +45,7 @@ const testCarouselItems: CarouselItem[] = [
   },
 ]
 
-export const CarouselStory: React.VFC = () => <Carousel items={testCarouselItems} />
+export const CarouselStory: React.VFC = () => <Carousel items={testCarouselItems} heightMultiplier={1.2} />
 
 const testCarouselElements: ReactElement[] = [
   <div key="1">You can also add completely custom react content to the carousel</div>,

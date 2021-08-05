@@ -12,6 +12,10 @@ import { CarouselStyles } from './Styles'
  */
 export interface CarouselProps {
   items: Array<CarouselItem | ReactElement>
+  // Height of the carousel as a multiple of its natural height
+  heightMultiplier?: number
+  // Width of the carousel as a multiple of its natural width
+  widthMultiplier?: number
 }
 /**
  * Carousel item is a type that when populated can be
@@ -133,7 +137,7 @@ function toCarouselSlide(item: CarouselItem | ReactElement, index: number): Reac
   )
 }
 
-export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
+export const Carousel: FunctionComponent<CarouselProps> = ({ items, heightMultiplier = 1, widthMultiplier = 4 }) => {
   const { widthRatio, heightRatio } = useScreenScale(1280, 720)
 
   return (
@@ -141,8 +145,8 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
       <CarouselProvider
         infinite
         totalSlides={items.length}
-        naturalSlideWidth={widthRatio * 4}
-        naturalSlideHeight={heightRatio * 1}
+        naturalSlideWidth={widthRatio * widthMultiplier}
+        naturalSlideHeight={heightRatio * heightMultiplier}
         isPlaying={window.matchMedia(`(max-width: ${breakpoints.largeMobile})`).matches}
         interval={2000}
       >
